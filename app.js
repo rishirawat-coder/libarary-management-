@@ -19,7 +19,9 @@ mongoose.connect(process.env.DB_URI)
 
 app.use(express.json())
 
-
+app.get("/", (req, res) => {
+    res.send("Welcome to the Book and Movie Collection API");
+})
 
 app.post("/addbooks" , async (req,res)=>{
     const bookData  =   await userbooks.create(req.body)
